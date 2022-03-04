@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveForce = 10f;
     [SerializeField] private float jumpForce = 11f;
+    
 
     private string RUNNING_FLAG = "isRunning";
     private string JUMPING_FLAG = "isJumping";
@@ -18,7 +19,7 @@ public class Player : MonoBehaviour
 
 
     private void Awake()
-    {
+    { 
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
