@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Edible
   layers:
   - Default
   - TransparentFX
