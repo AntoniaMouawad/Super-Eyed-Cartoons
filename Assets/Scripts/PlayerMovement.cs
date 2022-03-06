@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myBody;
     private SpriteRenderer sr;
     private float movementX;
+    private BoxCollider2D myCollider;
+    [SerializeField] private LayerMask groundMask;
     
 
 
@@ -23,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
+        myCollider = GetComponent<BoxCollider2D>();
         
     }
     // Start is called before the first frame update
@@ -63,20 +66,28 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool(RUNNING_FLAG, false);
         }
         
-        if (myBody.velocity.y > 0.01f)
+        if (myBody.velocity.y > 0.01f && isGrounded())
         {
             anim.SetBool(JUMPING_FLAG, true);
         }
 
-        else if (myBody.velocity.y < -3f)
+        else if (myBody.velocity.y < -3f && !isGrounded())
         {
             anim.SetBool(JUMPING_FLAG, false);
         }
     }
 
+    private bool isGrounded()
+    {
+        RaycastHit2D raycastHit = Physics2D.Raycast(myCollider.bounds.center,
+            Vector2.down, myCollider.bounds.extents.y + 5f, groundMask);
+        return raycastHit.collider != null && raycastHit.distance - myCollider.bounds.extents.y < 1f;
+
+    }
+
     private void JumpPlayer()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             

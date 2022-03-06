@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemy
   - Edible
+  - Destroyable
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Characters
-  - 
+  - Destroyable
   - 
   - 
   - 
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 313986227
+    locked: 0
+  - name: Destroyable
+    uniqueID: 3235935451
     locked: 0
