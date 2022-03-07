@@ -2,24 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PlayerColliding : MonoBehaviour
 {
     private CharacterHealth healthSystem;
     public ContactPoint2D[] contacts = new ContactPoint2D[10];
     private Tilemap destroyableMap;
-    
+    private int totalCollected, nPiecesLeft;
+    [SerializeField] private Text scoreText; //Todo: Take this out of the current class somehow
+
     private void Awake()
     {
         healthSystem = new CharacterHealth(100);
         destroyableMap = GameObject.FindGameObjectWithTag("Destroyable").GetComponent<Tilemap>();
+        totalCollected = 0;
+        nPiecesLeft = 4;
+        scoreText.text = "Score: 0";
     }
 
-    private void Update()
-    {
-
-
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -42,5 +43,21 @@ public class PlayerColliding : MonoBehaviour
 
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Edible"))
+        {
+            Destroy(collision.gameObject);
+            totalCollected += 1;
+            scoreText.text = "Score: " + totalCollected;
+        }
+        else if (collision.gameObject.CompareTag("Puzzle"))
+        {
+            Destroy(collision.gameObject);
+            nPiecesLeft -= 1;
+            Debug.Log(nPiecesLeft);
+        }
     }
 }
