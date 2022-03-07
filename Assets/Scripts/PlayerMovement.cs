@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool(RUNNING_FLAG, false);
         }
         
-        if (myBody.velocity.y > 0.005f && isGrounded())
+        if (myBody.velocity.y > 0.05f && isGrounded())
         {
             anim.SetBool(JUMPING_FLAG, true);
         }
