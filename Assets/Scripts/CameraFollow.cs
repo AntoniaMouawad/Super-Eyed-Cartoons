@@ -22,7 +22,7 @@ public class CameraFollow : MonoBehaviour
     {   
         tempPos = transform.position;
         tempPos.x = player.transform.position.x;
-        tempPos.y = player.transform.position.y;
+        tempPos.y = player.transform.position.y - .5f;
         transform.position = tempPos;
 
     }

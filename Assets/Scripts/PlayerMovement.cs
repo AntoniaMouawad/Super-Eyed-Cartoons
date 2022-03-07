@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveForce = 10f;
-    [SerializeField] private float jumpForce = 11f;
+    [SerializeField] private float jumpForce = 7f;
     
 
     private string RUNNING_FLAG = "isRunning";
@@ -66,12 +66,12 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool(RUNNING_FLAG, false);
         }
         
-        if (myBody.velocity.y > 0.01f && isGrounded())
+        if (myBody.velocity.y > 0.005f && isGrounded())
         {
             anim.SetBool(JUMPING_FLAG, true);
         }
 
-        else if (myBody.velocity.y < -0.01f)
+        else if (myBody.velocity.y < -0.2f || isGrounded())
         {
             anim.SetBool(JUMPING_FLAG, false);
         }
