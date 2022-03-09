@@ -48,8 +48,8 @@ public class PlayerCollisions : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Puzzle"))
         {
+            PlayerStats.RemainingPieces -= 1;
             Destroy(collision.gameObject);
-            //todo: handle this
             
         }
     }

@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveForce;
     }
 
-    private void AnimatePlayer()
+    private void AnimatePlayer() //todo: Definitely needs some more love
     {
         if (movementX > 0)
         {
@@ -82,22 +82,14 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.Raycast(myCollider.bounds.center,
             Vector2.down, myCollider.bounds.extents.y + 5f, groundMask);
 
-        Debug.Log(raycastHit.collider);
         return raycastHit.collider != null && raycastHit.distance - myCollider.bounds.extents.y < 1f;
 
     }
 
     private void JumpPlayer()
     {
-        if (Input.GetButtonDown("Jump")) 
-            Debug.Log("Asked for jump");
-       
         if (Input.GetButtonDown("Jump") && isGrounded())
-        {
-            
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            
-        }
     }
 
 

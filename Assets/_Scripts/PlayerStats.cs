@@ -10,10 +10,14 @@ public class PlayerStats : MonoBehaviour
     public static int Lives;
     [SerializeField] private int startLives = 3;
 
+    public static int RemainingPieces;
+    [SerializeField] private int remainingPieces = 4;
+
     private void Start()
     {
         Lives = startLives;
         Score = startScore;
+        RemainingPieces = remainingPieces;
     }
 
 }
