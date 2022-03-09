@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5394726436482134241}
   - component: {fileID: 5394726436482134240}
   - component: {fileID: 5394726436482134243}
-  - component: {fileID: 5394726436482134254}
   - component: {fileID: 5394726436482134255}
   - component: {fileID: 5394726436482134252}
-  - component: {fileID: 5394726436482134253}
-  - component: {fileID: 5394726436482134250}
+  - component: {fileID: 5394726438418046088}
+  - component: {fileID: 5394726438418046089}
+  - component: {fileID: 5394726438418046090}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -107,20 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5394726436482134254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5394726436482134242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87e517be4e45b416cb5fa7d9e44d25eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForce: 10
-  jumpForce: 8
 --- !u!50 &5394726436482134255
 Rigidbody2D:
   serializedVersion: 4
@@ -155,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.08686298}
+  m_Offset: {x: -0.017651916, y: 0.037044585}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,9 +152,23 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.826274}
+  m_Size: {x: 0.91974235, y: 1.7415074}
   m_EdgeRadius: 0
---- !u!114 &5394726436482134253
+--- !u!114 &5394726438418046088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394726436482134242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e7052dcb8e34e588f0f01a7b415538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScore: 0
+  startLives: 3
+--- !u!114 &5394726438418046089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af30f85de5d14a958d650abd4d1872d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5394726436482134250
+--- !u!114 &5394726438418046090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,7 +189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5394726436482134242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d39c19c0e009b49239f65e3c846ef29f, type: 3}
+  m_Script: {fileID: 11500000, guid: 87e517be4e45b416cb5fa7d9e44d25eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  moveForce: 10
+  jumpForce: 7.5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
