@@ -363,10 +363,10 @@ RectTransform:
   m_Father: {fileID: 853164625}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1620, y: -95}
-  m_SizeDelta: {x: 1079.3, y: 168}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -512.01, y: -95}
+  m_SizeDelta: {x: 1024.03, y: 168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177269711
 MonoBehaviour:
@@ -390,10 +390,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b0e10c74028a8496eae2cdd29cc44a50, type: 3}
-    m_FontSize: 140
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 140
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -593,8 +593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -161}
-  m_SizeDelta: {x: 860, y: 300}
+  m_AnchoredPosition: {x: 475.35004, y: -95}
+  m_SizeDelta: {x: 730.7, y: 168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351266399
 MonoBehaviour:
@@ -618,7 +618,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b0e10c74028a8496eae2cdd29cc44a50, type: 3}
-    m_FontSize: 140
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1196,8 +1196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -329}
-  m_SizeDelta: {x: 860, y: 300}
+  m_AnchoredPosition: {x: 475.35004, y: -263.1}
+  m_SizeDelta: {x: 730.7, y: 168.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &704997190
 MonoBehaviour:
@@ -1221,7 +1221,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b0e10c74028a8496eae2cdd29cc44a50, type: 3}
-    m_FontSize: 140
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1442,7 +1442,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -220847683
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1, y: 0.5, z: 0}
