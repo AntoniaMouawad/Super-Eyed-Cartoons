@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class MainMenuController : MonoBehaviour
         }
         else if (ButtonPressed == PlayGameButton)
         {
-            Debug.Log("Should Go to Play game Scene");
+            SceneManager.LoadScene("Level_1");
         }
     }
 }
