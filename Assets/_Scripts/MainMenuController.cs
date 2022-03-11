@@ -15,7 +15,8 @@ public class MainMenuController : MonoBehaviour
         PlayGameButton.onClick.AddListener(() => ButtonCallBack(PlayGameButton));
     }
 
-    private void ButtonCallBack(Button ButtonPressed){
+    private void ButtonCallBack(Button ButtonPressed)
+    {
         if (ButtonPressed == InstructionsButton)
         {
             Debug.Log("Here we should show the instructions");

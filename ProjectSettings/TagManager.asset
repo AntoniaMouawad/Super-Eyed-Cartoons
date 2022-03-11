@@ -9,6 +9,7 @@ TagManager:
   - Edible
   - Destroyable
   - Puzzle
+  - FinishFlag
   layers:
   - Default
   - TransparentFX
