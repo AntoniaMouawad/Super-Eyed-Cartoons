@@ -13,12 +13,12 @@ public class LivesUI : MonoBehaviour
     }
     private void OnEnable()
     {
-        PlayerCollisions.onHitEnemy += UpdateText;
+        PlayerCollisions.onHitKiller += UpdateText;
     }
 
     private void OnDisable()
     {
-        PlayerCollisions.onHitEnemy -= UpdateText;
+        PlayerCollisions.onHitKiller -= UpdateText;
     }
 
     // Update is called once per frame

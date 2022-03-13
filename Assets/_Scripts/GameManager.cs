@@ -27,14 +27,16 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GameStats.onPlayerDied += GameOver;
+        PlayerCollisions.onGameOver += GameOver;
+        PlayerCollisions.onHitKiller += RestartLevel;
         PlayerCollisions.onHitFlag += LoadNextLevel;
         
     }
 
     private void OnDisable()
     {
-        GameStats.onPlayerDied -= GameOver;
+        PlayerCollisions.onGameOver -= GameOver;
+        PlayerCollisions.onHitKiller -= RestartLevel;
         PlayerCollisions.onHitFlag -= LoadNextLevel;
     }
 
@@ -58,4 +60,9 @@ public class GameManager : MonoBehaviour
         GameStats.instance.RemainingPieces = 4; // Todo: sooo ugly, needs to be fixed
     }
 
+    private void RestartLevel()
+    {
+        ResetPuzzle();
+        SceneManager.LoadScene("Level_" + curLevel);
+    }
 }

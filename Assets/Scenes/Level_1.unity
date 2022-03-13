@@ -1027,6 +1027,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557b070d61db14c038752070774ee6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minX: -8
+  maxX: 80
+  minY: -14
+  maxY: 17
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1078,7 +1082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -2.7, y: -0.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1430,9 +1434,10 @@ GameObject:
   - component: {fileID: 848102374}
   - component: {fileID: 848102376}
   - component: {fileID: 848102375}
+  - component: {fileID: 848102377}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5073,6 +5078,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &848102377
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848102373}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &853164620
 GameObject:
   m_ObjectHideFlags: 0

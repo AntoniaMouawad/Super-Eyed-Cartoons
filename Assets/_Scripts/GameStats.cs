@@ -8,8 +8,6 @@ public class GameStats : MonoBehaviour
     public int Score{ get; set; }
     public int Lives { get; set; }
     public int RemainingPieces { get; set; }
-    public static Action onPlayerDied;
-    public static Action onAllPuzzleConsumed;
     public static GameStats instance;
 
     private void Awake()
@@ -32,14 +30,14 @@ public class GameStats : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerCollisions.onHitEnemy += LoseLife;
+        PlayerCollisions.onHitKiller += LoseLife;
         PlayerCollisions.onConsumeEdible += IncreaseScore;
         PlayerCollisions.onCollectPuzzle += ConsumePuzzle;
     }
 
     private void OnDisable()
     {
-        PlayerCollisions.onHitEnemy -= LoseLife;
+        PlayerCollisions.onHitKiller -= LoseLife;
         PlayerCollisions.onConsumeEdible -= IncreaseScore;
         PlayerCollisions.onCollectPuzzle -= ConsumePuzzle;
     }
@@ -47,10 +45,6 @@ public class GameStats : MonoBehaviour
     public void LoseLife()
     {
         Lives -= 1;
-        if (Lives <= 0)
-        {
-            onPlayerDied?.Invoke();
-        }
     }
 
     public void IncreaseScore()
@@ -61,10 +55,6 @@ public class GameStats : MonoBehaviour
     public void ConsumePuzzle()
     {
         RemainingPieces -= 1;
-        if (RemainingPieces == 0)
-        {
-            onAllPuzzleConsumed?.Invoke();
-        }
     }
 
 }
