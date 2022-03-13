@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FinishLineUI : MonoBehaviour
 {
-
     private GameObject FinishLineOn;
     private void Awake()
     {
@@ -13,7 +12,7 @@ public class FinishLineUI : MonoBehaviour
     }
     private void OnEnable()
     {
-        PlayerCollisions.onAllPuzzleCollected += TurnOnFinishLine;
+        GameStats.onAllPuzzleConsumed += TurnOnFinishLine;
     }
 
     private void TurnOnFinishLine()

@@ -7,8 +7,23 @@ public class RemainingPieces : MonoBehaviour
 {
     [SerializeField] Text remainingPuzzleText;
 
-    void Update()
+    private void Awake()
     {
-        remainingPuzzleText.text = "Remaining Pieces: " + PlayerStats.RemainingPieces.ToString();
+        UpdateText();
+    }
+    private void OnEnable()
+    {
+        PlayerCollisions.onCollectPuzzle += UpdateText;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCollisions.onCollectPuzzle -= UpdateText;
+    }
+
+    // Update is called once per frame
+    void UpdateText()
+    {
+        remainingPuzzleText.text = "Remaining Puzzle: " + GameStats.instance.RemainingPieces.ToString();
     }
 }

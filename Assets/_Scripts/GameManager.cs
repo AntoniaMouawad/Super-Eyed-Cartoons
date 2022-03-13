@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private int curLevel;
+
+    // losing life -> keep score, keep life, reset puzzle
 
     private void Awake()
     {
@@ -25,15 +27,25 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerCollisions.onPlayerDied += GameOver;
-        PlayerCollisions.onLevelCompleted += LoadNextLevel;
+        GameStats.onPlayerDied += GameOver;
+        PlayerCollisions.onHitFlag += LoadNextLevel;
         
     }
 
     private void OnDisable()
     {
-        PlayerCollisions.onPlayerDied -= GameOver;
-        PlayerCollisions.onLevelCompleted -= LoadNextLevel;
+        GameStats.onPlayerDied -= GameOver;
+        PlayerCollisions.onHitFlag -= LoadNextLevel;
+    }
+
+
+    void LoadNextLevel()
+    {
+        ResetPuzzle();
+        curLevel += 1;
+        SceneManager.LoadScene("Level_" + curLevel);
+
+
     }
 
     private void GameOver()
@@ -41,11 +53,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("GAME OVER");
     }
 
-    private void LoadNextLevel()
+    private void ResetPuzzle()
     {
-        curLevel += 1;
-        Debug.Log("Load Level" + curLevel);
+        GameStats.instance.RemainingPieces = 4; // Todo: sooo ugly, needs to be fixed
     }
-
 
 }
