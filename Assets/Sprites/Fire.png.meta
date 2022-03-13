@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 264eb6aeebb294a1ab568c678141ce1d
+guid: 6157fa66005874c2ba6db3a03391c7c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1013727590379206557
-    second: Destroyable_0
+      213: 1098286324429101383
+    second: Fire_0
   - first:
-      213: 4420695595878987276
-    second: Destroyable_1
+      213: 7419590508823533442
+    second: Fire_1
   - first:
-      213: 7982292056559921035
-    second: Destroyable_2
+      213: 2333874723133794383
+    second: Fire_2
   - first:
-      213: 7348927899190418453
-    second: Destroyable_3
+      213: 6211036013863027259
+    second: Fire_3
   - first:
-      213: -6502819942774145674
-    second: Destroyable_4
+      213: 2168491126659702453
+    second: Fire_4
   - first:
-      213: 6326562521046023520
-    second: Destroyable_5
+      213: 3081219861163341933
+    second: Fire_5
   - first:
-      213: 4772831960992186129
-    second: Destroyable_6
+      213: 519553080483729991
+    second: Fire_6
   - first:
-      213: -8651419684257190333
-    second: Destroyable_7
+      213: 964659150160153652
+    second: Fire_7
   - first:
-      213: 774270826775512286
-    second: Destroyable_8
+      213: -6879244290724207698
+    second: Fire_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +59,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -95,7 +95,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,7 +107,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,7 +119,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,7 +131,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,7 +142,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Destroyable_0
+      name: Fire_0
       rect:
         serializedVersion: 2
         x: 0
@@ -156,14 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d97b09b5fdb711e00800000000000000
-      internalID: 1013727590379206557
+      spriteID: 7491445d795ed3f00800000000000000
+      internalID: 1098286324429101383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_1
+      name: Fire_1
       rect:
         serializedVersion: 2
         x: 32
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c06308cf837795d30800000000000000
-      internalID: 4420695595878987276
+      spriteID: 2875941d14ea7f660800000000000000
+      internalID: 7419590508823533442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_2
+      name: Fire_2
       rect:
         serializedVersion: 2
         x: 64
@@ -198,14 +198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b872dac555cc6ce60800000000000000
-      internalID: 7982292056559921035
+      spriteID: f4827aef1b6936020800000000000000
+      internalID: 2333874723133794383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_3
+      name: Fire_3
       rect:
         serializedVersion: 2
         x: 0
@@ -219,14 +219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51cd33fecf2acf560800000000000000
-      internalID: 7348927899190418453
+      spriteID: b32c67dd858023650800000000000000
+      internalID: 6211036013863027259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_4
+      name: Fire_4
       rect:
         serializedVersion: 2
         x: 32
@@ -240,14 +240,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67dfe9827b751c5a0800000000000000
-      internalID: -6502819942774145674
+      spriteID: 5be5327c037081e10800000000000000
+      internalID: 2168491126659702453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_5
+      name: Fire_5
       rect:
         serializedVersion: 2
         x: 64
@@ -261,14 +261,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06d7f34e7177cc750800000000000000
-      internalID: 6326562521046023520
+      spriteID: d68f4838321b2ca20800000000000000
+      internalID: 3081219861163341933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_6
+      name: Fire_6
       rect:
         serializedVersion: 2
         x: 0
@@ -282,14 +282,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11ff19781618c3240800000000000000
-      internalID: 4772831960992186129
+      spriteID: 742513426c2d53700800000000000000
+      internalID: 519553080483729991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_7
+      name: Fire_7
       rect:
         serializedVersion: 2
         x: 32
@@ -303,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e270562abffe780800000000000000
-      internalID: -8651419684257190333
+      spriteID: 43c40a6d268236d00800000000000000
+      internalID: 964659150160153652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Destroyable_8
+      name: Fire_8
       rect:
         serializedVersion: 2
         x: 64
@@ -324,8 +324,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed407e5f633ceba00800000000000000
-      internalID: 774270826775512286
+      spriteID: ea3ef30f3c30880a0800000000000000
+      internalID: -6879244290724207698
       vertices: []
       indices: 
       edges: []

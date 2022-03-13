@@ -7,9 +7,24 @@ public class ScoreUI : MonoBehaviour
 {
     [SerializeField] Text scoreText;
 
-    private void Update()
+    private void Awake()
     {
-        scoreText.text = "Score: " + PlayerStats.Score.ToString();
+        UpdateText();
+    }
+    private void OnEnable()
+    {
+        PlayerCollisions.onConsumeEdible += UpdateText;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCollisions.onConsumeEdible -= UpdateText;
+    }
+
+    // Update is called once per frame
+    void UpdateText()
+    {
+        scoreText.text = "Score: " + GameStats.instance.Score.ToString();
     }
 }
 

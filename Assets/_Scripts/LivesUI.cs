@@ -7,9 +7,23 @@ public class LivesUI : MonoBehaviour
 {
     [SerializeField] Text livesText;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        livesText.text = "Lives: " + PlayerStats.Lives.ToString(); //TODO: Change to some better UI. But it's ok for now
+        UpdateText();
+    }
+    private void OnEnable()
+    {
+        PlayerCollisions.onHitEnemy += UpdateText;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCollisions.onHitEnemy -= UpdateText;
+    }
+
+    // Update is called once per frame
+    void UpdateText()
+    {
+        livesText.text = "Lives: " + GameStats.instance.Lives.ToString();
     }
 }

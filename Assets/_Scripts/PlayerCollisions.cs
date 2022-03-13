@@ -2,29 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 
 public class PlayerCollisions : MonoBehaviour
 {
     public ContactPoint2D[] contacts = new ContactPoint2D[10];
     private Tilemap destroyableMap;
+    public static Action onHitEnemy;
+    public static Action onCollectPuzzle;
+    public static Action onConsumeEdible;
+    public static Action onHitFlag;
 
     private void Awake()
     {
         destroyableMap = GameObject.FindGameObjectWithTag("Destroyable").GetComponent<Tilemap>();
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            PlayerStats.Lives -= 1;
+
+            onHitEnemy?.Invoke();
             Destroy(collision.gameObject);
         }
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Destroyable") )
-         { 
+        if (collision.gameObject.CompareTag("Destroyable"))
+        {
             Vector3 hitPosition = Vector3.zero;
             foreach (ContactPoint2D hit in collision.contacts)
             {
@@ -41,15 +49,19 @@ public class PlayerCollisions : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Edible"))
         {
-            PlayerStats.Score += 1;
+            onConsumeEdible?.Invoke();
             Destroy(collision.gameObject);
-            
+
         }
         else if (collision.gameObject.CompareTag("Puzzle"))
         {
-            PlayerStats.RemainingPieces -= 1;
+            onCollectPuzzle?.Invoke();
             Destroy(collision.gameObject);
-            
+
+        }
+        else if (collision.gameObject.CompareTag("FinishFlag"))
+        {
+            onHitFlag?.Invoke();
         }
     }
 }
