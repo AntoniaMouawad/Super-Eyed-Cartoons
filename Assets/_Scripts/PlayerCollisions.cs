@@ -8,10 +8,13 @@ public class PlayerCollisions : MonoBehaviour
 {
     public ContactPoint2D[] contacts = new ContactPoint2D[10];
     private Tilemap destroyableMap;
-    public static Action onHitEnemy;
+    private bool isAllPuzzleConsumed;
+    public static Action onHitKiller;
+    public static Action onGameOver;
     public static Action onCollectPuzzle;
     public static Action onConsumeEdible;
     public static Action onHitFlag;
+    public static Action onAllPuzzleConsumed;
 
     private void Awake()
     {
@@ -24,7 +27,11 @@ public class PlayerCollisions : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
 
-            onHitEnemy?.Invoke();
+            onHitKiller?.Invoke();
+            if (GameStats.instance.Lives == 0)
+            {
+                onGameOver?.Invoke();
+            } 
             Destroy(collision.gameObject);
         }
     }
@@ -40,8 +47,8 @@ public class PlayerCollisions : MonoBehaviour
                 hitPosition.y = hit.point.y - 0.01f * hit.normal.y;
                 destroyableMap.SetTile(destroyableMap.WorldToCell(hitPosition), null);
             }
-
         }
+
 
     }
 
@@ -56,9 +63,23 @@ public class PlayerCollisions : MonoBehaviour
         else if (collision.gameObject.CompareTag("Puzzle"))
         {
             onCollectPuzzle?.Invoke();
+            if (GameStats.instance.RemainingPieces == 0)
+                {
+                    onAllPuzzleConsumed?.Invoke();
+                }
             Destroy(collision.gameObject);
 
         }
+
+        else if (collision.gameObject.CompareTag("Fire"))
+        {
+            onHitKiller?.Invoke();
+            if (GameStats.instance.Lives == 0)
+            {
+                onGameOver?.Invoke();
+            }
+        }
+
         else if (collision.gameObject.CompareTag("FinishFlag"))
         {
             onHitFlag?.Invoke();

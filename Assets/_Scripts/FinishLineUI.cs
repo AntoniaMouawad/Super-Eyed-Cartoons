@@ -12,7 +12,12 @@ public class FinishLineUI : MonoBehaviour
     }
     private void OnEnable()
     {
-        GameStats.onAllPuzzleConsumed += TurnOnFinishLine;
+        PlayerCollisions.onAllPuzzleConsumed += TurnOnFinishLine;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCollisions.onAllPuzzleConsumed -= TurnOnFinishLine;
     }
 
     private void TurnOnFinishLine()

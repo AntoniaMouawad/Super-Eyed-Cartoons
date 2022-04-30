@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private string RUNNING_FLAG = "isRunning";
     private string JUMPING_FLAG = "isJumping";
+    private AudioSource jumpSound;
     
     private Animator anim;
     private Rigidbody2D myBody;
@@ -26,7 +27,9 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<BoxCollider2D>();
-        
+        jumpSound = GetComponent<AudioSource>();
+
+
     }
     // Start is called before the first frame update
     void Start()
@@ -89,7 +92,12 @@ public class PlayerController : MonoBehaviour
     private void JumpPlayer()
     {
         if (Input.GetButtonDown("Jump") && isGrounded())
+        {
+            jumpSound.time = 0.21f;
+            jumpSound.Play();
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+         
     }
 
 
