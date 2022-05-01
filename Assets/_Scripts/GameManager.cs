@@ -47,8 +47,6 @@ public class GameManager : MonoBehaviour
         ResetPuzzle();
         curLevel += 1;
         SceneManager.LoadScene("Level_" + curLevel);
-
-
     }
 
     private void GameOver()
@@ -60,8 +58,6 @@ public class GameManager : MonoBehaviour
     {
         GameStats.instance.RemainingPieces = 4; // Todo: sooo ugly, needs to be fixed
         onPuzzleReset?.Invoke();
-
-
     }
 
     private void RestartLevel()
