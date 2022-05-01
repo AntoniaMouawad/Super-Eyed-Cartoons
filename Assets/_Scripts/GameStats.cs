@@ -32,14 +32,14 @@ public class GameStats : MonoBehaviour
     {
         PlayerCollisions.onHitKiller += LoseLife;
         PlayerCollisions.onConsumeEdible += IncreaseScore;
-        PlayerCollisions.onCollectPuzzle += ConsumePuzzle;
+        PlayerCollisions.onPuzzleConsumed += ConsumePuzzle;
     }
 
     private void OnDisable()
     {
         PlayerCollisions.onHitKiller -= LoseLife;
         PlayerCollisions.onConsumeEdible -= IncreaseScore;
-        PlayerCollisions.onCollectPuzzle -= ConsumePuzzle;
+        PlayerCollisions.onPuzzleConsumed -= ConsumePuzzle;
     }
 
     public void LoseLife()

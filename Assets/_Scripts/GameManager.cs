@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     private int curLevel;
-
+    public static Action onPuzzleReset;
     // losing life -> keep score, keep life, reset puzzle
 
     private void Awake()
@@ -58,6 +59,9 @@ public class GameManager : MonoBehaviour
     private void ResetPuzzle()
     {
         GameStats.instance.RemainingPieces = 4; // Todo: sooo ugly, needs to be fixed
+        onPuzzleReset?.Invoke();
+
+
     }
 
     private void RestartLevel()

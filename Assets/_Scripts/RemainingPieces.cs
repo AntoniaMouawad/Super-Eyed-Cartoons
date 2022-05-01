@@ -13,12 +13,14 @@ public class RemainingPieces : MonoBehaviour
     }
     private void OnEnable()
     {
-        PlayerCollisions.onCollectPuzzle += UpdateText;
+        PlayerCollisions.onPuzzleConsumed += UpdateText;
+        GameManager.onPuzzleReset += UpdateText;
     }
 
     private void OnDisable()
     {
-        PlayerCollisions.onCollectPuzzle -= UpdateText;
+        PlayerCollisions.onPuzzleConsumed -= UpdateText;
+        GameManager.onPuzzleReset -= UpdateText;
     }
 
     // Update is called once per frame

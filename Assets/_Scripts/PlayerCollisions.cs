@@ -11,7 +11,7 @@ public class PlayerCollisions : MonoBehaviour
     private bool isAllPuzzleConsumed;
     public static Action onHitKiller;
     public static Action onGameOver;
-    public static Action onCollectPuzzle;
+    public static Action onPuzzleConsumed;
     public static Action onConsumeEdible;
     public static Action onHitFlag;
     public static Action onAllPuzzleConsumed;
@@ -62,7 +62,7 @@ public class PlayerCollisions : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Puzzle"))
         {
-            onCollectPuzzle?.Invoke();
+            onPuzzleConsumed?.Invoke();
             if (GameStats.instance.RemainingPieces == 0)
                 {
                     onAllPuzzleConsumed?.Invoke();
